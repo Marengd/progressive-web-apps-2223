@@ -1,0 +1,932 @@
+/* ********************************************************** */
+/* The new CSS reset - version 1.8.4 (last updated 14.2.2023) */
+/* GitHub page: https://github.com/elad2412/the-new-css-reset */
+/* ********************************************************** */
+
+/*
+    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+    - The "symbol *" part is to solve Firefox SVG sprite bug
+ */
+ *:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
+   all: unset;
+   display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+   box-sizing: border-box;
+}
+
+/* Reapply the pointer cursor for anchor tags */
+a, button {
+   cursor: revert;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol, ul, menu {
+   list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+   max-inline-size: 100%;
+   max-block-size: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+   border-collapse: collapse;
+}
+
+/* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
+input, textarea {
+   -webkit-user-select: auto;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+   white-space: revert;
+}
+
+/* minimum style to allow to style meter element */
+meter {
+   -webkit-appearance: revert;
+   appearance: revert;
+}
+
+/* preformatted text - use only for this feature */
+:where(pre) {
+   all: revert;
+}
+
+/* reset default text opacity of input placeholder */
+::placeholder {
+   color: unset;
+}
+
+/* remove default dot (•) sign */
+::marker {
+   content: initial;
+}
+
+/* fix the feature of 'hidden' attribute.
+  display:revert; revert to element instead of attribute */
+:where([hidden]) {
+   display: none;
+}
+
+/* revert for bug in Chromium browsers
+  - fix for the content editable attribute will work properly.
+  - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element*/
+:where([contenteditable]:not([contenteditable="false"])) {
+   -moz-user-modify: read-write;
+   -webkit-user-modify: read-write;
+   overflow-wrap: break-word;
+   -webkit-line-break: after-white-space;
+   -webkit-user-select: auto;
+}
+
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable="true"]) {
+   -webkit-user-drag: element;
+}
+
+/* Revert Modal native behavior */
+:where(dialog:modal) {
+   all: revert;
+}
+
+
+
+
+
+
+
+
+
+
+/*********************/
+/* Custom Properties */
+/*********************/
+
+
+:root {
+   --secondary-button-padding: 2.4rem 4.0rem;
+   --secondary-button-width: 16rem;
+   --secondary-button-border-radius: 80rem;
+   --secondary-button-text-color: black;
+   --secondary-button-font-size: 1.6rem;
+   --secondary-button-bg-color: white;
+
+
+
+   --page-margin: 1.6rem;
+
+   --mobile-grid: repeat(4, 1fr);
+
+   --primary-font: 'SuisseIntl';
+   --secondary-font: 'Suisse Works';
+
+   --secondary-font-letter-spacing: .16rem;
+
+   --font-size-XS: .8rem;
+   --font-size-S: clamp(1.6rem, 2vw, 1.8rem);
+   --size-S-line-height: 1.6;
+
+   --font-size-M: 2.4rem;
+   --font-size-L: 3.2rem;
+   --font-size-XL: clamp(4rem, 4.8vw, 16rem);
+   --font-size-XXL: 8rem;
+
+
+   --error-state-btn-padding: 1.6rem 2.4rem;
+   --error-state-btn-font-size: 1.4rem;
+   --error-state-btn-text-color: black;
+   --error-state-btn-border-radius: 8rem;
+   --error-state-btn-bg-color: white;
+}
+
+
+
+:root {
+
+
+   --primary-text-color: white;
+   --secondary-text-color: #959595;
+
+   --initials-font-size: 8rem;
+
+   --h1-bottom-spacing: 1.6rem;
+
+   --h2-font-size: 4rem;
+   --h2-bottom-spacing: 2.4rem;
+
+   --header-description-font-size: 1.8rem;
+
+   --body-font-size: 1.6rem;
+
+
+   --primary-button-padding: 2rem 4rem;
+   --primary-button-border-radius: 80rem;
+   --primary-button-bg-color: white;
+   --primary-button-font-size: 1.4rem;
+   --primary-button-text-color: black;
+
+   --nav-buttons-font-size: 1.6rem;
+   --nav-buttons-bg-color: rgba(237, 237, 237, 0.255);
+
+   --whitespace-sides: 2.4rem;
+
+   --generator-bg-color: black;
+
+   --white: white;
+   --black: black;
+}
+
+
+
+
+
+
+
+
+
+
+/* ***** */
+/* Fonts */
+/* ***** */
+
+@font-face {
+   font-family: 'SuisseIntl';
+
+   src: url('../assets/fonts/SuisseIntl-Regular.woff2') format('woff2');
+
+   font-style: normal;
+ }
+
+ @font-face {
+   font-family: 'Suisse Works';
+
+   src: url('../assets/fonts/SuisseWorks-Regular.woff2') format('woff2');
+
+   font-style: normal
+ }
+
+
+
+
+
+
+
+
+
+
+/********/
+/* Body */
+/********/
+
+body {
+   color: var(--white); /* Tijdelijk */
+}
+
+html, body {
+   height: 100%;
+
+   font-size: 62.5%; 
+}
+
+body {
+   background-color: var(--black);
+}
+
+
+/* ********* */
+/* No script */
+/* ********* */
+
+noscript {
+   z-index: 99;
+
+   position: fixed;
+
+   inset: 0;
+
+   background-color: var(--black);
+}
+
+noscript section {
+   padding: var(--page-margin);
+
+   display: grid;
+
+   gap: 2rem;
+
+   place-content: center;
+
+   width: 100%;
+   height: 100%;
+}
+
+noscript section figure img {
+   filter:grayscale(100);
+}
+
+noscript section h2 {
+   font-size: var(--font-size-M);
+}
+
+noscript section p {
+   font-size: var(--font-size-S);
+
+   line-height: var(--size-S-line-height);
+
+   color: var(--secondary-text-color);
+}
+
+
+
+/* ****** */
+/* States */
+/* ****** */
+
+
+/* ******* */
+/* Loading */
+/* ******* */
+
+body div#loader {
+   display: none;
+}
+
+body div#loader.active {
+   --loader-bg: black;
+
+   z-index: 99;
+
+   position: fixed;
+
+   inset: 0;
+
+   display: grid;
+
+   place-items: center;
+
+   font-family: var(--secondary-font);
+   font-size: var(--font-size-S);
+
+   color: var(--primary-text-color);
+
+   background-color: var(--loader-bg);
+}
+
+body div#loader.active ul {
+   display: grid;
+
+   place-items: center;
+
+   gap: 2.4rem;
+}
+
+body div#loader.active ul li:nth-child(1) svg {
+   fill: white;
+
+   width: 8vmin;
+   aspect-ratio: 1;
+
+   animation: rotating 4s linear infinite;
+}
+
+@keyframes rotating {
+   0% {
+      transform: rotate(0);
+   }
+
+   100% {
+      transform: rotate(360deg);
+   }
+}
+
+body div#loader.active ul li:nth-child(2) p {
+   font-family: var(--primary-font);
+   font-size: var(--font-size-S);
+
+   color: var(--secondary-text-color);
+}
+
+body div#loader.active ul li:nth-child(2) p span {
+   font-family: var(--secondary-font);
+}
+
+/* ***** */
+/* Error */
+/* ***** */
+
+body div#error {
+   display: none;
+}
+
+body div#error.active {
+   display: block;
+
+   z-index: 99;
+
+   position: absolute;
+
+   inset: 0;
+
+   background-color: var(--black);
+}
+
+body div#error.active article {
+   position: relative;
+
+   display: grid;
+
+   place-items: center;
+
+   width: 100%;
+   height: 100%;
+}
+
+body div#error.active article h2 {
+   font-family: var(--secondary-font);
+   font-size: var(--font-size-S);
+}
+
+body div#error.active article a {
+   position: absolute;
+
+   bottom: 2.4rem;
+
+   padding: var(--error-state-btn-padding);
+
+   font-size: var(--error-state-btn-font-size);
+
+   color: var(--error-state-btn-text-color);
+
+   border-radius: var(--error-state-btn-border-radius);
+
+   background-color: var(--error-state-btn-bg-color);
+}
+
+
+
+
+
+
+
+
+
+
+/* **** */
+/* Home */
+/* **** */
+
+.home {
+   overflow: none; /* Tijdelijk */
+
+   width: 100%;
+   height: 100%;
+}
+
+
+/* ****** */
+/* Header */
+/* ****** */
+
+.home header {   
+   width: 100%;
+   height: 100%;
+
+   background-color: var(--header-background-color);
+}
+
+/* *************** */
+/* Header sections */
+/* *************** */
+
+.home header > section {
+   width: 100%;
+   max-width: 100dvw;
+
+   height: 100%;
+   max-height: 100dvh;
+}
+
+/* ******************* */
+/* Left section header */
+/* ******************* */
+
+.home header > section:nth-child(1) {
+   display: none;
+}
+
+.home header > section:nth-child(1) figure {
+   width: 100%;
+   height: 100%;
+}
+
+.home header > section:nth-child(1) figure img {
+   width: 100%;
+   height: 100%;
+
+   object-fit: cover;
+
+   --image-placeholder-color: #cccccc;
+   background-color: var(--image-placeholder-color);
+}
+
+/* ******************** */
+/* Right section header */
+/* ******************** */
+
+.home header > section:nth-child(2) {
+   padding: var(--page-margin);
+
+   display: flex;
+
+   flex-direction: column;
+
+   align-items: center;
+   justify-content: space-between;
+}
+
+
+/* ******* */
+/* Letters */
+/* ******* */
+
+.home header > section:nth-child(2) section {
+   width: 100%;
+}
+
+.home header > section:nth-child(2) section ul {
+   display: flex;
+
+   align-items: center;
+   justify-content: space-between;
+
+   width: 100%;
+   height: auto;
+}
+
+.home header > section:nth-child(2) section ul li span {
+   font-family: var(--primary-font);
+   font-size: var(--font-size-XXL);
+
+   color: var(--primary-text-color);
+   
+   text-transform: uppercase;
+}
+
+.home header > section:nth-child(2) section ul li:nth-child(1) span:before {
+   content:'k';
+}
+
+.home header > section:nth-child(2) section ul li:nth-child(2) span::before {
+   content:'w';
+}
+
+
+/* ************** */
+/* Header context */
+/* ************** */
+
+.home header > section:nth-child(2) article {
+   width: 100%;
+   height: auto;
+}
+
+.home header > section:nth-child(2) article h1 {
+   padding-bottom: var(--h1-bottom-spacing);
+
+   display: grid;
+
+   font-family: var(--primary-font);
+   font-size: var(--font-size-XL);
+
+   color: var(--primary-text-color);
+}
+
+.home header > section:nth-child(2) article h1 span:nth-child(1) {
+   text-align: right;
+}
+
+.home header > section:nth-child(2) article p {
+   font-family: var(--primary-font);
+   font-size: var(--font-size-S);
+
+   line-height: var(--size-S-line-height);
+
+   color: var(--secondary-text-color);
+}
+
+
+/* ********************** */
+/* Header call to action  */
+/* ********************** */
+
+.home header > section:nth-child(2) nav {
+   z-index: 95;
+
+   width: 100%;
+   height: auto;
+}
+
+.home header > section:nth-child(2) nav ul {
+   display: flex;
+
+   align-items: flex-end;
+   justify-content: space-between;
+
+   width: 100%;
+   height: 100%;
+}
+
+.home header > section:nth-child(2) nav ul li p {
+   font-family: var(--primary-font);
+   font-size: var(--font-size-S);
+
+   color: var(--secondary-text-color);
+}
+
+.home header > section:nth-child(2) nav ul li a {
+   display: flex;
+
+   align-items: center;
+   justify-content: center;
+
+   width: 16rem;
+   aspect-ratio: 1 / 2;
+
+   font-family: var(--secondary-font);
+   font-size: var(--secondary-button-font-size);
+
+   color: var(--white);
+
+   border-radius: 100%;
+   border: .1rem solid var(--white);
+
+   /* background-color: var(--secondary-button-bg-color); */
+}
+
+.home header > section:nth-child(2) nav ul li a:hover {
+   color: var(--black);
+   background-color: var(--secondary-button-bg-color);
+}
+
+
+
+/* **** */
+/* Main */
+/* **** */
+
+.home main {
+   width: 100%;
+   height: 100%;
+
+   color: var(--white);
+}
+
+
+.home main > section {
+   width: 100%;
+   height: auto;
+}
+
+/* ****************** */
+/* Section quote list */
+/* ****************** */
+
+.home main > section #quote-list details {
+   --quote-list-border-color: white;
+   --quote-list-border: .1rem solid var(--quote-list-border-color);
+
+   font-size: var(--font-size-S);
+
+   width: 100%;
+
+   border-bottom: var(--quote-list-border);
+}
+
+.home main > section #quote-list details[open] {
+   padding-bottom: 4rem;
+}
+
+.home main > section details summary {
+   position: relative;
+
+   padding: 2rem 0;
+
+   display: flex;
+
+   align-items: center;
+
+   font-size: 4rem;
+}
+
+.home main > section details summary::-webkit-details-marker {
+   display:none;
+ }
+
+.home main section details summary::after {
+   content: 'Closed';
+   
+   position: absolute;
+
+   right: 1rem;
+
+   font-size: 2rem;
+}
+
+.home main section details[open] summary::after {
+   content: 'Open';
+}
+
+.home main > section details ul {
+   display: flex;
+   flex-direction: column;
+
+   gap: .8rem;
+}
+
+
+
+
+
+
+
+
+
+
+/* *************** */
+/* Quote Generator */
+/* *************** */
+
+
+/* ************** */
+/* Generator Main */
+/* ************** */
+
+main.generator {
+   width: 100%;
+   height: 100%;
+
+   background-color: var(--black);
+}
+
+
+/* **************** */
+/* Generator Header */
+/* **************** */
+
+main.generator header {
+   position: fixed;
+
+   width: 100%;
+   height: auto;
+}
+
+main.generator header nav {
+   width: 100%;
+   height: auto;
+}
+
+main.generator header nav ul {
+   display: grid;
+
+   grid-template-columns: repeat(4, 1fr);
+   column-gap: 1rem;
+
+   width: 100%;
+   height: auto;
+}
+
+main.generator header nav ul li {
+   font-family: var(--primary-font);
+   font-size: var(--font-size-M);
+
+   text-transform: capitalize;
+}
+
+main.generator header nav ul li:last-child {
+   grid-column-end: 5;
+}
+
+main.generator header nav ul li a {
+   display: grid;
+
+   text-align: right;
+}
+
+
+/* ***** */
+/* Quote */
+/* ***** */
+
+main.generator section {
+   display: grid;
+
+   align-items: center;
+
+   width: 100%;
+   height: 100%;
+}
+
+main.generator section blockquote {
+   --quote-font-size: 3.2rem;
+
+   --fading-text-mask: linear-gradient(to bottom, red 50%, transparent 100%);
+
+   font-family: var(--secondary-font);
+   font-size: var(--quote-font-size);
+
+   letter-spacing: var(--secondary-font-letter-spacing);
+
+   /* -webkit-mask-image: var(--fading-text-mask);
+   mask-image: var(--fading-text-mask); */
+}
+
+main.generator section blockquote #caret {   
+   animation: blink 1.25s infinite;
+}
+
+@keyframes blink {
+
+   0% { 
+      opacity: 1; 
+   }
+
+   50% { 
+      opacity: 0; 
+   }
+
+   100% { 
+      opacity: 1; 
+   }
+
+ }
+
+main.generator section blockquote #caret img {
+   width: 1.5vmin;
+   height: auto;
+}
+
+
+ 
+
+
+
+/* ****** */
+/* Footer */
+/* ****** */
+
+main.generator footer {
+   position: fixed;
+ 
+   bottom: 0;
+
+   width: 100%;
+   height: auto;
+}
+
+main.generator footer ul {
+   display: grid;
+
+   grid-template-columns: var(--mobile-grid);
+
+   align-items: end;
+   
+   width: 100%;
+   height: auto;
+}
+
+/* **** */
+/* Hint */
+/* **** */
+
+main.generator footer ul li:first-child {
+   grid-column: span 2;
+
+   font-family: var(--primary-font);
+   font-size: var(--font-size-S);
+}
+
+/* ****** */
+/* Button */
+/* ****** */
+
+main.generator footer ul li:last-child {
+   grid-column: span 2;
+   grid-column-end: 5;
+
+   display: flex;
+
+   justify-content: flex-end;
+}
+
+main.generator footer ul li:last-child button {
+   cursor: pointer;
+
+   width: 30vmin;
+   aspect-ratio: 1;
+}
+
+main.generator footer ul li:last-child button div {
+   pointer-events: none;
+}
+
+main.generator footer ul li:last-child button div svg {
+   pointer-events: none;
+   
+
+   width: 100%;
+   height: 100%;
+
+   fill: white;
+
+   transition: ease-in-out 1s;
+}
+
+main.generator footer ul li:last-child button div svg.active {
+   opacity: .1;
+
+   animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+
+   0% {
+      transform: rotate(0);
+   }
+
+   100% {
+      transform: rotate(360deg);
+   }
+
+}
+
+
+
+
+@media (min-width: 560px) {
+
+   header {
+      display: grid;
+   
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      
+      width: 100%;
+      height: 100%;
+   }
+
+   .home header section:nth-child(1) {
+   display: block;  
+     
+   width: 100%;
+   height: auto;
+ }
+
+}
