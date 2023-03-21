@@ -598,8 +598,8 @@ body div#error.active article a {
    align-items: center;
    justify-content: center;
 
-   width: 16rem;
-   aspect-ratio: 1 / 2;
+   width: 24rem;
+   aspect-ratio: 2 / 1;
 
    font-family: var(--secondary-font);
    font-size: var(--secondary-button-font-size);
