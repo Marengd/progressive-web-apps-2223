@@ -1,8 +1,8 @@
+const { default: fetch } = require("cross-fetch");
 const endpoint = require("./endpoint") 
-
 class Api {    
-   get = async (type, query, page, pageSize) => {        
-      const response = fetch(endpoint(type, query, page, pageSize))            
+   get = async (type) => {        
+      const response = fetch(endpoint(type))            
       .then((data) => {                
          return data;            
       })            

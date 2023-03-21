@@ -27,12 +27,11 @@
   },
   "homepage": "https://github.com/Marengd/progressive-web-apps-2223#readme",
   "dependencies": {
+    "cross-fetch": "^3.1.5",
     "ejs": "^3.1.9",
     "express": "^4.18.2",
     "fs": "^0.0.1-security",
-    "node-fetch": "^3.3.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "node-fetch": "^3.3.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.21"
