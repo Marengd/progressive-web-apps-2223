@@ -14,11 +14,6 @@ This is the repository of <a href="https://danianmarengo.nl">Danian Marengo</a> 
 
 ## Getting started
 
-Click the "Code" button on GitHub, copy the repository URL.
-```
-$ https://github.com/Marengd/progressive-web-apps-2223.git
-```
-
 Clone the repository using the copied URL.
 ``` 
 $ Git clone https://github.com/Marengd/progressive-web-apps-2223.git
