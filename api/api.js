@@ -1,46 +1,35 @@
+// Import the fetch function from the "cross-fetch" library.
 const { default: fetch } = require("cross-fetch");
-const endpoint = require("./endpoint") 
-class Api {    
-   get = async (type) => {        
-      const response = fetch(endpoint(type))            
-      .then((data) => {                
-         return data;            
-      })            
-      .catch((err) => {                
-         return err;            
-      });       
 
-   const res = await response;       
-    // let count;        
-    switch (res.status) {            
-      case 200:                
-      return await res.json()                // count = `Remaining fetches: ${res.headers["x-ratelimit-remaining"]}`;                // console.log(count);                // const repositories = octokit()                //     .request(endpoint(query, "repos"))                //
-      //      .then((data) => {                
-         //         return data;                //     })                //     .catch((err) => {                //         return err;                //     });                // return {                // user: res.data, repos: [{}, ...(await repositories).data]                // };            
-         case 404:               
-         break;
-         
-    }// count = `Remaining fetches: ${res.response.headers["x-ratelimit-remaining"]}`;                // console.log(count);                return res.response.data;        }    };    post = async (endpoint, body) => {        const response = await fetch(endpoint, {            method: "POST",            headers: {                "Content-Type": "application/json",            },            body: JSON.stringify(body),        });        if (!response.ok) {            throw new Error("Network response was not ok");        }        const data = response.json();        return data;    };}
-   }}
-    const api = new Api();
-    module.exports = api
+// Import the "endpoint" function from the local "endpoint" module.
+const endpoint = require("./endpoint");
 
-// const endpoint = require("./endpoint");
-// const fetched = require("node-fetch");
+// Define an "Api" class.
+class Api {
+  // Define an asynchronous "get" method that takes a "type" parameter.
+  async get(type) {
+    try {
+      // Fetch data from the specified endpoint and await its response.
+      const response = await fetch(endpoint(type));
 
-// class Api {
-//    get = async (type) => {
-//       const promise = fetched('https://api.kanye.rest')
-//       .then(response => {return response})
-//       // .then(data => {return data.quote})
-//       .catch(error => {
-//         console.log(error);
-//         failedRequests++;
-//         throw error;
-//       });
+      // Switch on the response status.
+      switch (response.status) {
+        case 200:
+          // If the status is 200, parse the JSON response and return it.
+          return await response.json();
+        case 404:
+          // If the status is 404, do nothing and exit the switch statement.
+          break;
+      }
+    } catch (err) {
+      // If an error occurs, return the error.
+      return err;
+    }
+  }
+}
 
-//       return promise
-//    }
-// }
-// const api = new Api()
-// module.exports = api;
+// Create a new instance of the "Api" class.
+const api = new Api();
+
+// Export the "api" instance as the module's default export.
+module.exports = api;
