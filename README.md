@@ -8,31 +8,45 @@ This is the repository of <a href="https://danianmarengo.nl">Danian Marengo</a> 
 <br>
 
 ## Overview
-The front- end of this website has been completely developed using vanilla JavaScript, without using frameworks such as Angular, React or Vue. To generate quotes spoken by Kanye West, this website utilizes the <a href="https://kanye.rest">Kanye.rest</a> API.
+...
 
 <br>
 
 ## Getting started
-Click on the green button labeled "Code" in the upper right corner of the page.
+Click on the green button labeled "Code" in the upper right corner of the page and copy the URL of the repository.
 ```
-$ <> Code
-```
-
-Select "Download Zip" to download the repository as a zip file.
-```
-$ Download ZIP
+$ https://github.com/Marengd/progressive-web-apps-2223.git
 ```
 
-Open the downloaded zip folder, then extract the contents to a location on your computer.
-
+Open your terminal or command prompt and navigate to the location where you want to clone the repository.
 ```
-$ Word_Of_Wisdom_Generator.Zip
+$ Cd Your_Folder_Name
 ```
 
-Open the extracted file and navigate to the file named "index.html", open it in your favorite web browser to view the website.
-
+Clone the Git repository by running the following command in the terminal/command prompt. Replace https://github.com/Marengd/progressive-web-apps-2223.git with the copied URL.
 ```
-$ Index.html
+$ Git clone https://github.com/Marengd/progressive-web-apps-2223.git
+```
+
+Navigate to the cloned project folder.
+```
+Cd progressive-web-apps-2223
+```
+
+<br>
+
+Install Node.js if you haven't already. You can download it from the official website: https://nodejs.org/
+
+<br>
+
+Install project dependencies by running the following command in the terminal.
+```
+$ Npm install
+```
+
+Once the dependencies are installed, start the project by running the following command in the terminal.
+```
+$Npm start
 ```
 
 <br>
