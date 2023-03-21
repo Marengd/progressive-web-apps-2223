@@ -13,42 +13,31 @@ This is the repository of <a href="https://danianmarengo.nl">Danian Marengo</a> 
 <br>
 
 ## Getting started
-Click on the green button labeled "Code" in the upper right corner of the page and copy the URL of the repository.
+
+Click the "Code" button on GitHub, copy the repository URL.
 ```
 $ https://github.com/Marengd/progressive-web-apps-2223.git
 ```
 
-Open your terminal or command prompt and navigate to the location where you want to clone the repository.
-```
-$ Cd Your_Folder_Name
-```
-
-Clone the Git repository by running the following command in the terminal/command prompt. Replace https://github.com/Marengd/progressive-web-apps-2223.git with the copied URL.
-```
+Clone the repository using the copied URL.
+``` 
 $ Git clone https://github.com/Marengd/progressive-web-apps-2223.git
 ```
 
 Navigate to the cloned project folder.
 ```
-Cd progressive-web-apps-2223
+$ cd progressive-web-apps-2223
 ```
 
-<br>
-
-Install Node.js if you haven't already. You can download it from the official website: https://nodejs.org/
-
-<br>
-
-Install project dependencies by running the following command in the terminal.
+Install project dependencies.
 ```
 $ Npm install
 ```
 
-Once the dependencies are installed, start the project by running the following command in the terminal.
+Start the project server.
 ```
-$Npm start
+$ Npm start
 ```
-
 <br>
 
 
