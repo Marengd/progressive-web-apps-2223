@@ -2,6 +2,10 @@ const api = require("../api/api");
 
 const index = (req, res) => {
   // console.log();
+
+  // Alles wat in const generator staat \/ Hieronder dus
+  // Ook hierin, alleen dan voor het renderen van alle quotes. 
+  // Vooral naar hieronder kijken.
   
    res.render('pages/index', {/* Hier voor quotes / vars */});
  };
