@@ -8,7 +8,9 @@ This is the repository of <a href="https://danianmarengo.nl">Danian Marengo</a> 
 <br>
 
 ## Overview
-...
+This updated website has been developed using Node.js and Express, transitioning from a completely client- side rendered application to a server-side rendered Progressive Web App. 
+
+The original version, created for the 'Web App From Scratch' course, utilized vanilla JavaScript without frameworks such as Angular, React, or Vue. The objective of this new iteration is to enhance the web application by implementing server- side rendering and turning it into a Progressive Web App. 
 
 <br>
 
