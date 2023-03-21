@@ -79,7 +79,15 @@
          <main>
 
             <section>
-               <section class="quote-list" id="quote-list"></section>
+               <!-- <section class="quote-list" id="quote-list"></section> -->
+
+               <!-- Render each quote in an unordered list -->
+            <ul>
+               <% quotes.forEach((quote) => { %>
+               <li><%= quote %></li>
+               <% }); %>
+            </ul>
+ 
             </section>
 
          </main>
