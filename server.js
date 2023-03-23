@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 8000;
 // Middleware
 
 // Serve static files from the 'public' folder
-app.use(express.static("./public"));
+app.use(express.static("public"));
 
 // Serve the 'public/dist' folder as static content under the '/dist' path
 app.use('/dist', express.static('public/dist'));
