@@ -1,7 +1,3 @@
-console.log('Made with 🔥😈🥶');
+console.log('🔥😈🥶');
 
-
-import './modules/displayAllQuotes.js';
-import '../js/randomQuote.js';
-
-
+import '../css/style.css';
