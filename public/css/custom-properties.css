@@ -1,0 +1,71 @@
+/*********************/
+/* Custom Properties */
+/*********************/
+
+:root {
+    --secondary-button-padding: 2.4rem 4.0rem;
+    --secondary-button-width: 16rem;
+    --secondary-button-border-radius: 80rem;
+    --secondary-button-text-color: black;
+    --secondary-button-font-size: 1.6rem;
+    --secondary-button-bg-color: white;
+ 
+ 
+ 
+    --page-margin: 1.6rem;
+ 
+    --mobile-grid: repeat(4, 1fr);
+ 
+    --primary-font: 'SuisseIntl';
+    --secondary-font: 'Suisse Works';
+ 
+    --secondary-font-letter-spacing: .16rem;
+ 
+    --font-size-XS: .8rem;
+    --font-size-S: clamp(1.6rem, 2vw, 1.8rem);
+    --size-S-line-height: 1.6;
+ 
+    --font-size-M: 2.4rem;
+    --font-size-L: 3.2rem;
+    --font-size-XL: clamp(4rem, 4.8vw, 16rem);
+    --font-size-XXL: 8rem;
+ 
+ 
+    --error-state-btn-padding: 1.6rem 2.4rem;
+    --error-state-btn-font-size: 1.4rem;
+    --error-state-btn-text-color: black;
+    --error-state-btn-border-radius: 8rem;
+    --error-state-btn-bg-color: white;
+
+    --primary-text-color: white;
+    --secondary-text-color: #959595;
+ 
+    --initials-font-size: 8rem;
+ 
+    --h1-bottom-spacing: 1.6rem;
+ 
+    --h2-font-size: 4rem;
+    --h2-bottom-spacing: 2.4rem;
+ 
+    --header-description-font-size: 1.8rem;
+ 
+    --body-font-size: 1.6rem;
+ 
+ 
+    --primary-button-padding: 2rem 4rem;
+    --primary-button-border-radius: 80rem;
+    --primary-button-bg-color: white;
+    --primary-button-font-size: 1.4rem;
+    --primary-button-text-color: black;
+ 
+    --nav-buttons-font-size: 1.6rem;
+    --nav-buttons-bg-color: rgba(237, 237, 237, 0.255);
+ 
+    --whitespace-sides: 2.4rem;
+ 
+    --generator-bg-color: black;
+ 
+    --white: white;
+    --black: black;
+ }
+ 
