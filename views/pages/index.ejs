@@ -82,11 +82,13 @@
                <!-- <section class="quote-list" id="quote-list"></section> -->
 
                <!-- Render each quote in an unordered list -->
-            <ul>
-               <% quotes.forEach((quote) => { %>
-               <li><%= quote %></li>
-               <% }); %>
-            </ul>
+               <ul>
+                  <% quotes.forEach((quote, index) => { %>
+                    <li>
+                      <a href="/quote-detail/<%= index %>"><%= quote %></a>
+                    </li>
+                  <% }); %>
+                </ul>
  
             </section>
 

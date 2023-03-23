@@ -29,8 +29,23 @@ const generator = async (req, res) => {
   }
 };
 
+// Render the quote detail page with a specific quote from the API
+const quoteDetail = async (req, res) => {
+  try {
+    const index = req.params.index;
+    const quotes = await api.get("all");
+    const quote = quotes[index];
+
+    // Render the 'pages/quote-detail' template with the fetched quote
+    res.render("pages/quote-detail", { quote });
+  } catch (err) {
+    throw new Error(err);
+  }
+};
+
 // Export the controller functions
 module.exports = {
   index,
   generator,
+  quoteDetail,
 };

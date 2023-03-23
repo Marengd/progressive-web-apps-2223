@@ -6,11 +6,11 @@ const endpoint = require("./endpoint");
 
 // Define an "Api" class.
 class Api {
-  // Define an asynchronous "get" method that takes a "type" parameter.
-  async get(type) {
+  // Define an asynchronous "get" method that takes a "type" parameter and an optional "index" parameter.
+  async get(type, index) {
     try {
       // Fetch data from the specified endpoint and await its response.
-      const response = await fetch(endpoint(type));
+      const response = await fetch(endpoint(type, index));
 
       // Switch on the response status.
       switch (response.status) {
