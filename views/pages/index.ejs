@@ -82,13 +82,18 @@
                <!-- <section class="quote-list" id="quote-list"></section> -->
 
                <!-- Render each quote in an unordered list -->
-               <ul>
-                  <% quotes.forEach((quote, index) => { %>
-                    <li>
-                      <a href="/quote-detail/<%= index %>"><%= quote %></a>
-                    </li>
-                  <% }); %>
-                </ul>
+               <% for (const letter in groupedQuotes) { %>
+                  <details>
+                      <summary><%= letter %></summary>
+                      <ul>
+                          <% groupedQuotes[letter].forEach((quote, index) => { %>
+                          <li>
+                              <a href="/quote-detail/<%= index %>"><%= quote %></a>
+                          </li>
+                          <% }); %>
+                      </ul>
+                  </details>
+                  <% } %>
  
             </section>
 
@@ -96,23 +101,6 @@
 
       </div>
 
-
-      <!-- <noscript>
-         <section>
-            <figure>
-               <img
-                  src="https://media4.giphy.com/media/P2yFOCpOyv561AdpkU/giphy.gif?cid=ecf05e47zl9iw54kaot83sxeaso79470i6yfbd3mn1wkzah5&rid=giphy.gif&ct=g"
-                  alt="">
-            </figure>
-
-            <h2>
-               Burning down everything we've worked so hard to achieve
-            </h2>
-            <p>
-               Your JavaScript is disabled. Without it, our web app won't be able to share Kanye West his wisdom.
-            </p>
-         </section>
-      </noscript> -->
    </body>
 
 </html>

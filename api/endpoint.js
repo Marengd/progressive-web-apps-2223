@@ -7,12 +7,10 @@ const endpoint = (type, index) => {
       return 'https://api.kanye.rest';
 
     case 'all':
-      // Return the custom URL for the "all" type.
-      return 'https://raw.githubusercontent.com/ajzbc/kanye.rest/master/quotes.json';
-
-    case 'quote-detail':
-      // Return the custom URL for the "quote-detail" type with an added index parameter.
-      return `https://raw.githubusercontent.com/ajzbc/kanye.rest/master/quotes.json?index=${index}`;
+      // Return the custom URL for the "all" type, with the index parameter if provided.
+      const baseUrl = 'https://raw.githubusercontent.com/ajzbc/kanye.rest/master/quotes.json';
+      // Append index if provided, else fetch all quotes.
+      return index ? `${baseUrl}?index=${index}` : baseUrl;
 
     default:
       // Handle unknown types by returning an empty string or an error message.

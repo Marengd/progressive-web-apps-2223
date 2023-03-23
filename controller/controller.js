@@ -1,16 +1,25 @@
 // Import the API module
 const api = require("../api/api");
 
-// Render the index page with all the quotes from the API
+// Render the index page with all the quotes from the API, sorted and grouped alphabetically
 const index = async (req, res) => {
   try {
-    // Fetch all the quotes from the 'all' endpoint of the API
     const quotes = await api.get("all");
 
-    // Render the 'pages/index' template with the fetched quotes
-    res.render('pages/index', { quotes });
+    // Sort quotes alphabetically
+    quotes.sort();
+
+    // Group quotes by the first letter
+    const groupedQuotes = quotes.reduce((acc, quote) => {
+      const firstLetter = quote[0].toUpperCase();
+      acc[firstLetter] = acc[firstLetter] || [];
+      acc[firstLetter].push(quote);
+      return acc;
+    }, {});
+
+    // Render the 'pages/index' template with the grouped quotes
+    res.render("pages/index", { groupedQuotes });
   } catch (err) {
-    // Handle errors by throwing a new Error with the caught error
     throw new Error(err);
   }
 };
@@ -18,13 +27,10 @@ const index = async (req, res) => {
 // Render the generator page with a random quote from the API
 const generator = async (req, res) => {
   try {
-    // Fetch a quote from the 'detail' endpoint of the API
     const quote = await api.get("detail");
 
-    // Render the 'pages/generator' template with the fetched quote
-    res.render('pages/generator', { quote });
+    res.render("pages/generator", { quote });
   } catch (err) {
-    // Handle errors by throwing a new Error with the caught error
     throw new Error(err);
   }
 };
