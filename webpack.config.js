@@ -6,9 +6,9 @@ const mode = process.env.NODE_ENV || 'development';
 module.exports = {
   mode,
   entry: {
-    main: './public/js/app.js',
-    'custom-properties': './public/css/custom-properties.css',
-    reset: './public/css/reset.css' // Add 'reset.css' as an entry point
+    main: '/public/js/app.js',
+    'custom-properties': '/public/css/custom-properties.css',
+    reset: '/public/css/reset.css' // Add 'reset.css' as an entry point
   },
   output: {
     path: path.resolve(__dirname, 'public/dist'),
