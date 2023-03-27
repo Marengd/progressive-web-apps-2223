@@ -16,5 +16,8 @@ router.get("/generator", controller.generator);
 // Add a new route for the quote detail page
 router.get("/quote-detail/:index", controller.quoteDetail);
 
+// Add a new route for the offline page
+router.get("/offline", controller.offline);
+
 // Export the router instance as the module's default export.
 module.exports = router;

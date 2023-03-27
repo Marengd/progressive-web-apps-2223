@@ -49,9 +49,16 @@ const quoteDetail = async (req, res) => {
   }
 };
 
+
+// Render the offline page
+const offline = (req, res) => {
+  res.render("pages/offline");
+};
+
 // Export the controller functions
 module.exports = {
   index,
   generator,
   quoteDetail,
+  offline,
 };
