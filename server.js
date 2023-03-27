@@ -14,6 +14,9 @@ const PORT = process.env.PORT || 8000;
 // Serve static files from the 'public' folder
 app.use(express.static("public"));
 
+// Serve all files in the 'public' folder as static content with the 'text/javascript' MIME type
+app.use(express.static("public", { type: "text/javascript" }));
+
 // Serve the 'public/dist' folder as static content under the '/dist' path
 app.use('/dist', express.static('public/dist'));
 

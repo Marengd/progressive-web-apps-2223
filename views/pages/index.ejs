@@ -84,22 +84,28 @@
                <!-- Render each quote in an unordered list -->
                <% for (const letter in groupedQuotes) { %>
                   <details>
-                      <summary><%= letter %></summary>
-                      <ul>
-                          <% groupedQuotes[letter].forEach((quote, index) => { %>
-                          <li>
-                              <a href="/quote-detail/<%= index %>"><%= quote %></a>
-                          </li>
-                          <% }); %>
-                      </ul>
+                     <summary>
+                        <%= letter %>
+                     </summary>
+                     <ul>
+                        <% groupedQuotes[letter].forEach((quote, index)=> { %>
+                           <li>
+                              <a href="/quote-detail/<%= index %>">
+                                 <%= quote %>
+                              </a>
+                           </li>
+                           <% }); %>
+                     </ul>
                   </details>
                   <% } %>
- 
+
             </section>
 
          </main>
 
       </div>
+
+      <%- include("../partials/footer.ejs") %>
 
    </body>
 
