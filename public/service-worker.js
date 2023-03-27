@@ -2,74 +2,63 @@ const cacheName = 'kanye-west-quote-generator-app-cache';
 
 // List of assets to cache
 const urlsToCache = [
-    '/views/pages/offline.ejs'
-  ];
+  '/views/pages/offline.ejs'
+];
 
-self.addEventListener('install', function(event) {
+self.addEventListener('install', (event) => {
   console.log('Service Worker: installed');
 
-  event.waitUntil(
-    caches.open(cacheName).then(function(cache) {
+  event.waitUntil((async () => {
+    try {
+      const cache = await caches.open(cacheName);
       console.log('Opened cache.');
       return cache.addAll(urlsToCache);
-    }).catch(function(error) {
-      console.error('Cache addAll error:', error);
-    })
-  );
+    } catch (error) {
+      console.error('Cache Add All error:', error);
+    }
+  })());
 });
 
-self.addEventListener('activate', function(event) {
+self.addEventListener('activate', (event) => {
   console.log('Service Worker: Activated');
 
-  event.waitUntil(
-    caches.keys().then(function(cacheNames) {
-      return Promise.all(
-        cacheNames.filter(function(thisCacheName) {
-          return thisCacheName !== cacheName;
-        }).map(function(cacheName) {
+  event.waitUntil((async () => {
+    const cacheNames = await caches.keys();
+    return Promise.all(
+      cacheNames.filter((thisCacheName) => thisCacheName !== cacheName)
+        .map((cacheName) => {
           console.log('Service Worker: Deleting Cache ', cacheName);
           return caches.delete(cacheName);
         })
-      );
-    })
-  );
+    );
+  })());
 });
 
-self.addEventListener('fetch', function(event) {
-  console.log('Service Worker: Fetched', event.request.url);
-
-  event.respondWith(
-    caches.match(event.request).then(function(response) {
-      // Cache hit - return response
-      if (response) {
-        console.log('Service Worker: Cache Hit ', event.request.url);
-        return response;
+self.addEventListener('fetch', (event) => {
+  event.respondWith((async () => {
+    try {
+      // Try to match the request in the cache
+      const cachedResponse = await caches.match(event.request);
+      if (cachedResponse) {
+        return cachedResponse;
       }
 
-      // Clone the request
-      const fetchRequest = event.request.clone();
+      // If not in cache, perform a network request
+      const networkResponse = await fetch(event.request);
 
-      return fetch(fetchRequest).then(function(response) {
-        // Check if we received a valid response
-        if (!response || response.status !== 200 || response.type !== 'basic') {
-          return response;
-        }
+      // If we received a valid response, cache it and return it
+      if (networkResponse && networkResponse.status === 200 && networkResponse.type === 'basic') {
+        const responseToCache = networkResponse.clone();
+        const cache = await caches.open(cacheName);
+        cache.put(event.request, responseToCache);
+        return networkResponse;
+      }
 
-        // Clone the response
-        const responseToCache = response.clone();
-
-        console.log('Service Worker: Caching A New Request', event.request.url);
-
-        caches.open(cacheName).then(function(cache) {
-          cache.put(event.request, responseToCache);
-        });
-
-        return response;
-      }).catch(function() {
-        // If request fails, serve offline page
-        console.log('Offline:', event.request.url);
-        return caches.match('/offline.ejs');
-      });
-    })
-  );
+      // If response is not valid, return it without caching
+      return networkResponse;
+    } catch (error) {
+      // If a network error occurs, serve the offline page
+      return caches.match('/offline.ejs');
+    }
+  })());
 });
