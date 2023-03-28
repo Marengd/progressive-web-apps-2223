@@ -31,9 +31,14 @@ Install project dependencies.
 $ Npm install
 ```
 
+Build the project for deployment.
+```
+$ Npm run build
+```
+
 Start the project server.
 ```
-$ Npm start
+$ Npm run start
 ```
 <br>
 
