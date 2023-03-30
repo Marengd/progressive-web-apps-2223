@@ -23,7 +23,7 @@ $ Git clone https://github.com/Marengd/progressive-web-apps-2223.git
 
 Navigate to the cloned project folder.
 ```
-$ cd progressive-web-apps-2223
+$ Cd progressive-web-apps-2223
 ```
 
 Install project dependencies.
