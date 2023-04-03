@@ -3,6 +3,7 @@ const cacheName = 'kanye-west-quote-generator-app-cache';
 
 // List of assets to cache
 const urlsToCache = [
+  '/',
   '/offline',
 ];
 
