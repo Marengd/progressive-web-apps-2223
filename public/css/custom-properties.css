@@ -68,5 +68,11 @@
  
     --white: white;
     --black: black;
+
+    --XS-spacer: 1rem;
+    --S-spacer: 2rem;
+    --M-spacer: 4rem;
+    --L-spacer: 6rem;
+    --XL-spacer: 8rem;
  }
  
