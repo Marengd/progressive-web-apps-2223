@@ -347,11 +347,11 @@ body div#error.active article a {
 }
 
 .home header > section:nth-child(2) section ul li:nth-child(1) span:before {
-   content:'k';
+   content:'K';
 }
 
 .home header > section:nth-child(2) section ul li:nth-child(2) span::before {
-   content:'w';
+   content:'W';
 }
 
 
@@ -513,12 +513,11 @@ body div#error.active article a {
 .home main > section details ul {
    display: flex;
    flex-direction: column;
-
-   gap: .8rem;
 }
 
-
-
+.home main > section details ul li {
+   font-size: 4rem;
+}
 
 
 

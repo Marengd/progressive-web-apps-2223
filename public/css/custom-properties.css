@@ -15,9 +15,10 @@
     --page-margin: 1.6rem;
  
     --mobile-grid: repeat(4, 1fr);
- 
-    --primary-font: 'SuisseIntl';
-    --secondary-font: 'Suisse Works';
+
+    --primary-font: 'SuisseIntl', Arial, sans-serif;
+    --secondary-font: 'Suisse Works', Georgia, serif;
+
  
     --secondary-font-letter-spacing: .16rem;
  
