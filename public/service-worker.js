@@ -5,7 +5,7 @@ const cacheName = 'kanye-west-quote-generator-app-cache';
 const urlsToCache = [
   '/',
   '/offline',
-];
+]
 
 // Install event listener for the service worker
 self.addEventListener('install', (event) => {
