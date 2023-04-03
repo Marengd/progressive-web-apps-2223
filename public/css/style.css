@@ -25,19 +25,18 @@
 
 @font-face {
    font-family: 'SuisseIntl';
-
    src: url('../assets/fonts/SuisseIntl-Regular.woff2') format('woff2');
-
    font-style: normal;
+   font-display: swap;
  }
-
+ 
  @font-face {
    font-family: 'Suisse Works';
-
    src: url('../assets/fonts/SuisseWorks-Regular.woff2') format('woff2');
-
-   font-style: normal
+   font-style: normal;
+   font-display: swap;
  }
+ 
 
 
 
@@ -516,7 +515,7 @@ body div#error.active article a {
 }
 
 .home main > section details ul li {
-   font-size: 4rem;
+   font-size: 8rem;
 }
 
 
