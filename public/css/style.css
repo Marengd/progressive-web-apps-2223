@@ -65,6 +65,18 @@ body {
    background-color: var(--black);
 }
 
+body > h1 {
+   font-size: 8rem;
+}
+
+body > p {
+   font-size: 6rem;
+}
+
+body > a {
+   font-size: 2rem;
+}
+
 
 /* ********* */
 /* No script */
