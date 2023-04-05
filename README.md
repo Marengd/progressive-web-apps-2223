@@ -480,7 +480,7 @@ Dit kan helpen bij het plannen en ontwerpen van de gebruikerservaring en de func
 
 <br>
 
-[Uitwerking Activitiy Diagram](/docs/imgs/readme-lighthouse-results.jpg)
+[Uitwerking Activitiy Diagram](/docs/imgs/readme-activity-diagram.jpg)
 
 
 <br>
