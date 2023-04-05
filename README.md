@@ -472,7 +472,21 @@ self.addEventListener('fetch', (event) => {
 </details>
 
 <br>
+
+## Service worker uitgewerkt als Activity Diagram
+Een activity diagram is een soort diagram die vaak voorkomt in de softwareontwikkeling, en heeft als functie om de stroom van activiteiten of taken te visualiseren die een systeem of proces uitvoert. Voor Front End Developers kan een activity diagram bijvoorbeeld worden gebruikt om de interacties van gebruikers met een website of applicatie te visualiseren, inclusief de verschillende acties die ze kunnen uitvoeren en de verschillende schermen die ze kunnen zien.
+
+Dit kan helpen bij het plannen en ontwerpen van de gebruikerservaring en de functionaliteit van de applicatie.
+
 <br>
+
+[Uitwerking Activitiy Diagram](/docs/imgs/readme-lighthouse-results.jpg)
+
+
+<br>
+<br>
+
+
 
 ## Het optimaliseren van het Critical Rendering Path
 Het verbeteren van de snelheid waarmee de content van een webpagina wordt geladen en weergegeven aan de gebruiker. Dit omvat het verminderen van de hoeveelheid data die nodig is om de pagina te laden, het verbeteren van de manier waarop de browser deze data verwerkt en het verminderen van de tijd die nodig is om de pagina te renderen en weer te geven aan de gebruiker.
