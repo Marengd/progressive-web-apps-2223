@@ -1,5 +1,5 @@
-# Kanye West, Word of Wisdom Generator
-Unleash Kanye's Wisdom, let his wisdom guide us.
+# Progressive Kanye West Quote App
+Unleash Kanye's Wisdom.
 
 <img src="/docs/imgs/readme_header_image.jpg" alt="Close – up van een mobiele telefoon omringd door duisternis met de tekst Kanye West, Word of Wisdom Generator op het scherm." width="100%">
 
@@ -7,40 +7,48 @@ This is the repository of <a href="https://danianmarengo.nl">Danian Marengo</a> 
 
 <br>
 
-## Overview
-This updated website has been developed using Node.js and Express, transitioning from a completely client- side rendered application to a server-side rendered Progressive Web App. 
+## Beschrijving
+Deze geüpdatete website is ontwikkeld met behulp van Node.js en Express, en is overgegaan van een volledig client-side gerenderde applicatie naar een server-side gerenderde progressive Web App.
 
-The original version, created for the 'Web App From Scratch' course, utilized vanilla JavaScript without frameworks such as Angular, React, or Vue. The objective of this new iteration is to enhance the web application by implementing server- side rendering and turning it into a Progressive Web App. 
+De oorspronkelijke versie, gemaakt voor de cursus 'Web App From Scratch', maakte gebruik van vanilla JavaScript zonder frameworks zoals Angular, React of Vue. Het doel van deze nieuwe versie is om de webapplicatie te verbeteren door server-side rendering toe te passen en het om te zetten in een Progressive Web App.
 
 <br>
 
-## Getting started
+## Aan de slag
+Je moet Node.js en Node Package Manager op je machine geïnstalleerd hebben, dit zijn onze enige afhankelijkheden om het project lokaal te kunnen draaien.
 
-Clone the repository using the copied URL.
+
 ``` 
-$ Git clone https://github.com/Marengd/progressive-web-apps-2223.git
+# Kloon de repository door gebruik te maken van de gekopieerde URL.
+Git clone https://github.com/Marengd/progressive-web-apps-2223.git
 ```
 
-Navigate to the cloned project folder.
+
 ```
-$ Cd progressive-web-apps-2223
+# Navigeer naar de gekloonde projectfolder.
+Cd progressive-web-apps-2223
 ```
 
-Install project dependencies.
+
 ```
+# Installeer de projectbenodigdheden.
 $ Npm install
 ```
 
-Build the project for deployment.
+
 ```
+# Bouw het project voor implementatie.
 $ Npm run build
 ```
 
-Start the project server.
+
 ```
+# Start de projectserver.
 $ Npm run start
 ```
 <br>
+
+
 
 
 ## Credits
