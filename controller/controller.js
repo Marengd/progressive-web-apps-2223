@@ -1,61 +1,54 @@
-// Import the API module
 const api = require("../api/api");
 
-// Render the index page with all the quotes from the API, sorted and grouped alphabetically
 const index = async (req, res) => {
   try {
-    const quotes = await api.get("all");
+    const quotes = await api.fetchQuotes();
 
-    // Sort quotes alphabetically
-    quotes.sort();
+    const sortedQuotes = quotes.sort((a, b) => a.quote.localeCompare(b.quote));
 
-    // Group quotes by the first letter
-    const groupedQuotes = quotes.reduce((acc, quote) => {
-      const firstLetter = quote[0].toUpperCase();
-      acc[firstLetter] = acc[firstLetter] || [];
-      acc[firstLetter].push(quote);
-      return acc;
-    }, {});
+    const groupedQuotes = {};
 
-    // Render the 'pages/index' template with the grouped quotes
+    for (const { quote, index } of sortedQuotes) {
+      const letter = quote[0].toUpperCase();
+
+      if (!groupedQuotes[letter]) {
+        groupedQuotes[letter] = [];
+      }
+
+      groupedQuotes[letter].push({ quote, index });
+    }
+
     res.render("pages/index", { groupedQuotes });
   } catch (err) {
     throw new Error(err);
   }
 };
 
-// Render the generator page with a random quote from the API
 const generator = async (req, res) => {
   try {
     const quote = await api.get("detail");
-
     res.render("pages/generator", { quote });
   } catch (err) {
     throw new Error(err);
   }
 };
 
-// Render the quote detail page with a specific quote from the API
 const quoteDetail = async (req, res) => {
   try {
     const index = req.params.index;
-    const quotes = await api.get("all");
-    const quote = quotes[index];
+    const quotes = await api.fetchQuotes();
+    const quote = quotes[index].quote;
 
-    // Render the 'pages/quote-detail' template with the fetched quote
     res.render("pages/quote-detail", { quote });
   } catch (err) {
     throw new Error(err);
   }
 };
 
-
-// Render the offline page
 const offline = (req, res) => {
   res.render("pages/offline");
 };
 
-// Export the controller functions
 module.exports = {
   index,
   generator,

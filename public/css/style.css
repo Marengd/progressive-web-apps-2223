@@ -540,6 +540,11 @@ body div#error.active article a {
 /* Quote Generator */
 /* *************** */
 
+main > h1 {
+   font-size: 4rem;
+   max-width: 80rem;
+}
+
 
 /* ************** */
 /* Generator Main */
